@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byr1pdma1prav"]
+
+[ext_resource type="Script" uid="uid://c7l3hnft2jhl6" path="res://Script/paso_de_cebras.gd" id="1_dp5v7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppryh"]
+size = Vector2(23.5, 66)
+
+[node name="paso de cebras" type="Area2D"]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_dp5v7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(328.25, 381)
+shape = SubResource("RectangleShape2D_ppryh")

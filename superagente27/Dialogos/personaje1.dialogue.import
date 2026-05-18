@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dx61yw5pbnvov"
+path="res://.godot/imported/personaje1.dialogue-6a1cfe67237a8112cbc743adbfb87ed9.tres"
+
+[deps]
+
+source_file="res://Dialogos/personaje1.dialogue"
+dest_files=["res://.godot/imported/personaje1.dialogue-6a1cfe67237a8112cbc743adbfb87ed9.tres"]
+
+[params]
+
+defaults=true

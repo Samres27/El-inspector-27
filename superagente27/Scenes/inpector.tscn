@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://iodimq8uq1f4"]
+
+[ext_resource type="Script" uid="uid://bidx8vhq6su1v" path="res://Script/camera_2d.gd" id="1_j6bxf"]
+
+[node name="inpector" type="Camera2D"]
+visible = false
+script = ExtResource("1_j6bxf")

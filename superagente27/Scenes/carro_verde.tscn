@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjp1wyk2rtwgi"]
+
+[ext_resource type="Texture2D" uid="uid://cphnh3g10sbmy" path="res://assets/city/autos.png" id="1_4qkim"]
+[ext_resource type="Script" uid="uid://b7mns11m2osp6" path="res://Script/Carro_verde.gd" id="1_fudq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fudq8"]
+atlas = ExtResource("1_4qkim")
+region = Rect2(92, 2, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3aud"]
+atlas = ExtResource("1_4qkim")
+region = Rect2(108, 2, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrdbj"]
+atlas = ExtResource("1_4qkim")
+region = Rect2(97, 38, 22, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0638g"]
+atlas = ExtResource("1_4qkim")
+region = Rect2(97, 22, 22, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mx7di"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fudq8")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3aud")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrdbj")
+}],
+"loop": true,
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0638g")
+}],
+"loop": true,
+"name": &"Izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3fit3"]
+height = 20.0
+
+[node name="Carro_verde" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_fudq8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mx7di")
+animation = &"Derecha"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3fit3")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 6
+collide_with_areas = true
