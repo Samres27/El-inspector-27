@@ -50,13 +50,11 @@ func actualizar_animacion():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("colision")
 	is_player_close = true
 	
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("exit")
 	is_player_close = false
 
 func dialogo_activo (dialogo) :

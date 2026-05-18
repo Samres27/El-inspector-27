@@ -1,11 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3n4eiphmwjt2"]
+[gd_scene load_steps=21 format=3 uid="uid://d3n4eiphmwjt2"]
 
 [ext_resource type="Script" uid="uid://ccbr3kbehhjtw" path="res://Script/personaje.gd" id="1_s1v4a"]
+[ext_resource type="Resource" uid="uid://dx61yw5pbnvov" path="res://Dialogos/personaje1.dialogue" id="2_brltg"]
 [ext_resource type="Texture2D" uid="uid://db6wdkqu6xlio" path="res://assets/city/tilemap.png" id="2_rcsid"]
-[ext_resource type="Script" uid="uid://cs4h48xj3qxpu" path="res://Script/dialogueCollision.gd" id="3_rcsid"]
+[ext_resource type="Texture2D" uid="uid://kc781xt5axdg" path="res://assets/character/ceci.png" id="3_78hx4"]
+[ext_resource type="Texture2D" uid="uid://bnet0ujmt0hxh" path="res://assets/character/75bea2bc-303d-4c8e-b0da-a5222cddb56b.png" id="5_78hx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_brltg"]
-size = Vector2(15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78hx4"]
 atlas = ExtResource("2_rcsid")
@@ -114,25 +115,31 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s1v4a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78hx4"]
+size = Vector2(15, 15)
 
-[node name="Personaje" type="CharacterBody2D"]
-collision_mask = 2
+[node name="Personaje" type="Area2D"]
+collision_mask = 7
 script = ExtResource("1_s1v4a")
+npc_dialogue = ExtResource("2_brltg")
+portrait = ExtResource("3_78hx4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_brltg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5rgyc")
-animation = &"Izquierda"
+animation = &"Arriba"
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 collision_mask = 2
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_mask = 2
-script = ExtResource("3_rcsid")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_s1v4a")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_78hx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -9)
+texture = ExtResource("5_78hx4")

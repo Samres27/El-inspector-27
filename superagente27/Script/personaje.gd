@@ -1,4 +1,33 @@
-extends CharacterBody2D
+extends Area2D
+
+var is_player_close = false
+@export var npc_dialogue: DialogueResource #= preload("res://Dialogos/personaje1.dialogue")
+@export var portrait: Texture2D
+
+	
+	
+func _process(delta: float):
+	actualizar_animacion()
+	if is_player_close and Input.is_action_just_pressed("ui_accept"):
+			DialogueManager.show_dialogue_balloon(npc_dialogue,"start")
+func _ready():
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+	GlobalDialogue.portrait = portrait
+	$Sprite2D.visible= false
+	
+func _on_body_entered(body: Node2D):
+	
+	if body.name == "Player":
+		$Sprite2D.visible=true
+		is_player_close = true
+
+func _on_body_exited(body: Node2D):
+	
+	if body.name == "Player":
+		$Sprite2D.visible= false
+		is_player_close = false
+
 
 @onready var path_follow = get_parent()  # Asumiendo que es hijo de PathFollow2D
 var speed = 20
@@ -16,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	if $RayCast2D.is_colliding():
 		return
 		
+	if is_player_close:
+		return
 	tiempo_pausa -= delta
 	if pausa:
 		
@@ -24,7 +55,6 @@ func _physics_process(delta: float) -> void:
 			tiempo_pausa = randf_range(1.0, 10.0) #el rango de tiempo caminando
 	else:
 		if tiempo_pausa <= 0.0:
-			print("puasando...")
 			pausa = true
 			tiempo_pausa = randf_range(0.5, 1) #el rango de tiempo de la pausa
 		path_follow.progress += speed * delta
@@ -32,10 +62,6 @@ func _physics_process(delta: float) -> void:
 	direccion = (pos - posicion_anterior).normalized()
 	$RayCast2D.target_position = direccion * 13
 	posicion_anterior = pos
-
-func _process(delta: float) -> void:
-	actualizar_animacion()
-
 
 
 func actualizar_animacion():

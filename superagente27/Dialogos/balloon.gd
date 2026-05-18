@@ -70,6 +70,7 @@ var mutation_cooldown: Timer = Timer.new()
 ## Indicator to show that player can progress dialogue.
 @onready var progress: Polygon2D = %Progress
 
+@onready var portrait_rect = $Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer/TextureRect
 
 func _ready() -> void:
 	balloon.hide()
@@ -81,7 +82,7 @@ func _ready() -> void:
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
-
+	portrait_rect.texture = GlobalDialogue.portrait
 	if auto_start:
 		if not is_instance_valid(dialogue_resource):
 			assert(false, DMConstants.get_error_message(DMConstants.ERR_MISSING_RESOURCE_FOR_AUTOSTART))

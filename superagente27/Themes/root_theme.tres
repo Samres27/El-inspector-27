@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cnbh3ucd52m50"]
+
+[ext_resource type="FontFile" uid="uid://clgtqpyqaybbm" path="res://assets/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_ue1j3"]
+[ext_resource type="FontFile" uid="uid://dnrlcge7cofox" path="res://assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf" id="2_0pxgw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ue1j3"]
+bg_color = Color(0.782472, 0.633542, 0.430061, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pxgw"]
+bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+border_color = Color(0.780392, 0.631373, 0.431373, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bq8y"]
+bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.505344, 0.505344, 0.505344, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl65l"]
+bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+border_color = Color(0.931826, 0.760935, 0.64982, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+default_font = ExtResource("2_0pxgw")
+Button/icons/icon = null
+Button/styles/disabled = SubResource("StyleBoxFlat_ue1j3")
+Button/styles/hover = SubResource("StyleBoxFlat_0pxgw")
+Button/styles/normal = SubResource("StyleBoxFlat_5bq8y")
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_ue1j3")
+LineEdit/fonts/font = ExtResource("1_ue1j3")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+MenuButton/fonts/font = ExtResource("1_ue1j3")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_dl65l")
+RichTextLabel/constants/line_separation = 5
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 17
+RichTextLabel/fonts/normal_font = ExtResource("2_0pxgw")
+TextEdit/fonts/font = ExtResource("1_ue1j3")
