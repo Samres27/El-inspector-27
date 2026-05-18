@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://bmcuasj4w7hx"]
+[gd_scene load_steps=59 format=4 uid="uid://bmcuasj4w7hx"]
 
 [ext_resource type="Texture2D" uid="uid://db6wdkqu6xlio" path="res://assets/city/tilemap.png" id="1_wtcfe"]
 [ext_resource type="PackedScene" uid="uid://bqkk0cwmru3r5" path="res://Scenes/Carro_Amarrillo.tscn" id="3_epypp"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cjp1wyk2rtwgi" path="res://Scenes/carro_verde.tscn" id="6_d21ai"]
 [ext_resource type="PackedScene" uid="uid://d38an2cy6cjf2" path="res://Scenes/player.tscn" id="7_d21ai"]
 [ext_resource type="PackedScene" uid="uid://byr1pdma1prav" path="res://Scenes/paso_de_cebras.tscn" id="7_rj586"]
+[ext_resource type="Resource" uid="uid://dx61yw5pbnvov" path="res://Dialogos/personaje1.dialogue" id="8_ir8iy"]
 [ext_resource type="PackedScene" uid="uid://d3n4eiphmwjt2" path="res://Scenes/personaje1.tscn" id="8_rj586"]
 [ext_resource type="PackedScene" uid="uid://d2yx0juboghxb" path="res://Scenes/personajeAleatorio1.tscn" id="9_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://kc781xt5axdg" path="res://assets/character/ceci.png" id="9_hqns4"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wtcfe"]
 tile_data = PackedInt32Array(0, 1179665, 8, 65536, 1179665, 9, 131072, 1179665, 10, 1, 1245201, 8, 65537, 1245201, 9, 131073, 1245201, 10, 2, 1310737, 8, 65538, 1310737, 9, 131074, 1310737, 10)
@@ -3195,12 +3197,6 @@ _data = {
 }
 point_count = 12
 
-[sub_resource type="Curve2D" id="Curve2D_nr8wp"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 679, 631, 0, 0, 0, 0, 675, 541, 0, 0, 0, 0, 780, 543, 0, 0, 0, 0, 777, 625, 0, 0, 0, 0, 679, 631)
-}
-point_count = 5
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Fondo" type="TileMapLayer" parent="."]
@@ -3767,17 +3763,10 @@ collision_mask = 7
 
 [node name="Npcs" type="Node" parent="."]
 
-[node name="Path2D" type="Path2D" parent="Npcs"]
-curve = SubResource("Curve2D_nr8wp")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Npcs/Path2D"]
+[node name="Personaje" parent="Npcs" instance=ExtResource("8_rj586")]
 position = Vector2(679, 631)
-rotation = -1.61521
-rotates = false
-
-[node name="Personaje" parent="Npcs/Path2D/PathFollow2D" instance=ExtResource("8_rj586")]
-position = Vector2(-8.10623e-06, -8.82149e-06)
-rotation = 1.61521
+npc_dialogue = ExtResource("8_ir8iy")
+portrait = ExtResource("9_hqns4")
 
 [node name="aleatorio" type="Node" parent="Npcs"]
 
@@ -3786,3 +3775,4 @@ position = Vector2(206, 606)
 
 [node name="Personaje" parent="Npcs/aleatorio" instance=ExtResource("9_4d7sh")]
 position = Vector2(99, 21)
+script = null
