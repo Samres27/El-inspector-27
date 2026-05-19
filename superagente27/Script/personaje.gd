@@ -1,7 +1,7 @@
 extends Area2D
 
 var is_player_close = false
-@export var npc_dialogue: DialogueResource #= preload("res://Dialogos/personaje1.dialogue")
+@export var npc_dialogue: DialogueResource = preload("res://Dialogos/default.dialogue")
 @export var portrait: Texture2D
 var destino: Vector2
 var existe_destino = false
@@ -11,11 +11,15 @@ var existe_destino = false
 func _process(delta: float):
 	actualizar_animacion()
 	if is_player_close and Input.is_action_just_pressed("ui_accept"):
-			DialogueManager.show_dialogue_balloon(npc_dialogue,"start")
+		var balloon= DialogueManager.show_dialogue_balloon(npc_dialogue, "start")
+		
+		# 2. Si el Balloon se creó con éxito, le pasamos la textura directamente a su variable
+		if balloon:
+			balloon.set_portrait(portrait)
+			
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	GlobalDialogue.portrait = portrait
 	$Sprite2D.visible= false
 	generar_nuevo_destino() 
 	
@@ -64,6 +68,11 @@ func generar_nuevo_destino():
 			#generar_nuevo_destino()
 func movimiento():
 	if existe_destino:
+		
+		# ¡Si el rayo detecta una pared en camino, recalculamos destino!
+		if $RayCast2D.is_colliding():
+			generar_nuevo_destino()
+			return
 		direccion = (destino - global_position).normalized()
 		
 		# Movemos la posición manualmente usando delta (puedes pasar delta como parámetro)
@@ -78,10 +87,7 @@ func movimiento():
 			generar_nuevo_destino()
 
 func _physics_process(delta: float) -> void:
-	direccion = Vector2.ZERO #para iniciar animacion estatica
-	if $RayCast2D.is_colliding():
-		return
-		
+	direccion = Vector2.ZERO 
 	if is_player_close:
 		return
 	

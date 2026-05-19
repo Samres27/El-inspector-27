@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://0yemtsamv7mv"]
+[gd_scene load_steps=5 format=3 uid="uid://0yemtsamv7mv"]
 
 [ext_resource type="Script" uid="uid://bj68lghkaahtv" path="res://Dialogos/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
-[ext_resource type="Texture2D" uid="uid://kc781xt5axdg" path="res://assets/character/ceci.png" id="2_f5qgn"]
 [ext_resource type="Theme" uid="uid://cnbh3ucd52m50" path="res://Themes/root_theme.tres" id="2_to3uj"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -46,7 +45,6 @@ custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
-texture = ExtResource("2_f5qgn")
 expand_mode = 1
 stretch_mode = 5
 

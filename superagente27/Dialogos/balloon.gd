@@ -82,7 +82,8 @@ func _ready() -> void:
 
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
-	portrait_rect.texture = GlobalDialogue.portrait
+	
+			
 	if auto_start:
 		if not is_instance_valid(dialogue_resource):
 			assert(false, DMConstants.get_error_message(DMConstants.ERR_MISSING_RESOURCE_FOR_AUTOSTART))
@@ -99,7 +100,17 @@ func _unhandled_input(_event: InputEvent) -> void:
 	if will_block_other_input:
 		get_viewport().set_input_as_handled()
 
-
+func set_portrait(nueva_textura: Texture2D) -> void:
+	# Nos aseguramos de que los nodos (@onready) ya existan en el árbol
+	if not is_node_ready():
+		await ready
+		
+	if nueva_textura != null:
+		portrait_rect.texture = nueva_textura
+		portrait_rect.visible = true
+	else:
+		portrait_rect.visible = false
+		
 func _notification(what: int) -> void:
 	## Detect a change of locale and update the current dialogue line to show the new language
 	if what == NOTIFICATION_TRANSLATION_CHANGED and _locale != TranslationServer.get_locale() and is_instance_valid(dialogue_label):
