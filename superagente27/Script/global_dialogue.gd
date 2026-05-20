@@ -1,4 +1,3 @@
 extends Node
 
-var portrait: Texture2D
-var npc_name: String
+var is_dialogue_active = false

@@ -1,0 +1,74 @@
+~ start
+
+%2 => dial1
+%2 => dial2
+%2 => dial3
+%2 => dial4
+%2 => dial5
+% => dial6
+
+~ dial1
+Samuel: Hola, ¿cómo anda...?
+Samuel: Yo ando bien.
+Samuel: ¿Que cómo lo sé?
+Samuel: No me ves caminar; ando de maravilla.
+=> END
+
+~ dial2
+
+Samuel: Bonita mañana.
+Samuel: Sabes que tambien es bonita?
+Samuel: La tarde
+Samuel: Pero sin duda
+Samuel: Tu mirada
+Samuel: Que te parece estoy practicando
+=> END
+~ dial3
+Samuel: Desmayarse, atreverse, estar furioso
+Samuel: Aspero, tierno, liberal, esquivo,
+Samuel: Alentado, mortal, difunto, vivo,
+Samuel: Leal, traidor, cobarde y animoso;
+Samuel: No hallar fuera del bien centro y reposo,
+Samuel: Mostrarse alegre, triste, humilde, altivo,
+Samuel: Enojado, valiente, fugitivo,
+Samuel: Satisfecho, ofendido, receloso;
+Samuel: Huir el rostro al claro desengaño,
+Samuel: Beber veneno por licor süave,
+Samuel: Olvidar el provecho, amar el daño;
+Samuel: Creer que un cielo en un infierno cabe,
+Samuel: Dar la vida y el alma a un desengaño;
+Samuel: Esto es amor, quien lo probó lo sabe.
+Samuel: Bonito poema......... 
+Samuel: No te parece?
+
+=> END
+
+~ dial4
+Samuel: ¿Me ayudas a practicar unas frases?
+Samuel: ¿Eres el wifi? Es que siento una conexión increíble entre tú y yo.
+Samuel: ......
+Samuel: ......
+Samuel: En serio, ¿a alguien le funciona esto?
+
+=> END
+
+~ dial5
+Samuel: Haber una mas
+Samuel: Ayúdame a practicar.
+Samuel: Tengo planeada una misión secreta: robarte una sonrisa en persona. ¿Te apuntas?
+Samuel: .....
+Samuel: .....
+Samuel: No, no
+Samuel: Parece acosador.
+
+=> END
+
+~ dial6
+Samuel: ¿Sabes?
+Samuel: Acércate un poco más.
+Samuel: Soy el creador de este mundo.
+Samuel: .....
+Samuel: jaja
+Samuel: jaja
+Samuel: En realidad, no...
+=> END

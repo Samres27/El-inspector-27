@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://eaogxdbgpqai"
+path="res://.godot/imported/isabel.dialogue-023d2a8c89df5f3f3c85cb88817e3c47.tres"
+
+[deps]
+
+source_file="res://Dialogos/isabel.dialogue"
+dest_files=["res://.godot/imported/isabel.dialogue-023d2a8c89df5f3f3c85cb88817e3c47.tres"]
+
+[params]
+
+defaults=true

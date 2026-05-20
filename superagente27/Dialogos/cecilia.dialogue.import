@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dqhkdtspb4osd"
+path="res://.godot/imported/cecilia.dialogue-05aada630cffc167e33ac1177d770349.tres"
+
+[deps]
+
+source_file="res://Dialogos/cecilia.dialogue"
+dest_files=["res://.godot/imported/cecilia.dialogue-05aada630cffc167e33ac1177d770349.tres"]
+
+[params]
+
+defaults=true

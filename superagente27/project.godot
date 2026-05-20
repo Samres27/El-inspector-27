@@ -62,4 +62,4 @@ correr={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogos/personaje1.dialogue", "res://Dialogos/default.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogos/personaje1.dialogue", "res://Dialogos/default.dialogue", "res://Dialogos/ana.dialogue", "res://Dialogos/carlos.dialogue", "res://Dialogos/fancy.dialogue", "res://Dialogos/flower.dialogue", "res://Dialogos/imp.dialogue", "res://Dialogos/isabel.dialogue", "res://Dialogos/jose.dialogue", "res://Dialogos/juan.dialogue", "res://Dialogos/juliana.dialogue", "res://Dialogos/luz.dialogue", "res://Dialogos/marcos.dialogue", "res://Dialogos/maria.dialogue", "res://Dialogos/mateo.dialogue", "res://Dialogos/pigtails.dialogue", "res://Dialogos/pout.dialogue", "res://Dialogos/purple.dialogue", "res://Dialogos/roberto.dialogue", "res://Dialogos/samuel.dialogue", "res://Dialogos/tatiana.dialogue", "res://Dialogos/cecilia.dialogue")

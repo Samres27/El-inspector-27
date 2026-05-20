@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://b5h0tojbqe3kf"
+path="res://.godot/imported/mateo.dialogue-d09d93afba65b317ed160aa8f45b5fa1.tres"
+
+[deps]
+
+source_file="res://Dialogos/mateo.dialogue"
+dest_files=["res://.godot/imported/mateo.dialogue-d09d93afba65b317ed160aa8f45b5fa1.tres"]
+
+[params]
+
+defaults=true

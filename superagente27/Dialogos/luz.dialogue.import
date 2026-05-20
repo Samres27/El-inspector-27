@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dboyfgfno1rc0"
+path="res://.godot/imported/luz.dialogue-2095f217a318b3d01105a91a0e703828.tres"
+
+[deps]
+
+source_file="res://Dialogos/luz.dialogue"
+dest_files=["res://.godot/imported/luz.dialogue-2095f217a318b3d01105a91a0e703828.tres"]
+
+[params]
+
+defaults=true

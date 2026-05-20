@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bdimfjuhixr57"
+path="res://.godot/imported/tatiana.dialogue-3d14e5d84fc86954efe0fbb93846a942.tres"
+
+[deps]
+
+source_file="res://Dialogos/tatiana.dialogue"
+dest_files=["res://.godot/imported/tatiana.dialogue-3d14e5d84fc86954efe0fbb93846a942.tres"]
+
+[params]
+
+defaults=true

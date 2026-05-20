@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cdiom7r8ovxy4"
+path="res://.godot/imported/carlos.dialogue-91afd04dc2206f031f1a174dafe67304.tres"
+
+[deps]
+
+source_file="res://Dialogos/carlos.dialogue"
+dest_files=["res://.godot/imported/carlos.dialogue-91afd04dc2206f031f1a174dafe67304.tres"]
+
+[params]
+
+defaults=true

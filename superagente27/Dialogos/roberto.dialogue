@@ -1,0 +1,27 @@
+~ start
+% => dia1
+% => dia2
+% => dia3
+% => dia4
+
+~ dia1
+Roberto: Oh, hola.
+Roberto: Siempre me sorprende cuando alguien me habla primero.
+Roberto: Normalmente soy yo el que empieza conversaciones raras.
+=> END
+~ dia2
+Roberto: ¿Sabes?
+Roberto: Creo que la ciudad se siente menos aburrida cuando hablas con gente.
+Roberto: Incluso conversaciones pequeñas.
+=> END
+~ dia3
+Roberto: Ayer un vendedor me dijo que esta piedra daba suerte.
+Roberto: Así que compré dos.
+Roberto: Por si una no funcionaba.
+=> END
+~ dia4
+Roberto: Hoy va a ser un buen día.
+Roberto: Lo decidí esta mañana.
+Roberto: Y normalmente mis decisiones duran como diez minutos, así que aprovecha.
+=> END
+=> END

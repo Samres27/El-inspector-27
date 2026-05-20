@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://blq6p2rc6hwk6"
+path="res://.godot/imported/pigtails.dialogue-80f2fd80a0b6a697c2a4bad5f60b3c48.tres"
+
+[deps]
+
+source_file="res://Dialogos/pigtails.dialogue"
+dest_files=["res://.godot/imported/pigtails.dialogue-80f2fd80a0b6a697c2a4bad5f60b3c48.tres"]
+
+[params]
+
+defaults=true

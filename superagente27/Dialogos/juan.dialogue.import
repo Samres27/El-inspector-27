@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://0f0hb2qf56ht"
+path="res://.godot/imported/juan.dialogue-5af3becaebe73a46b543bff0f06156d1.tres"
+
+[deps]
+
+source_file="res://Dialogos/juan.dialogue"
+dest_files=["res://.godot/imported/juan.dialogue-5af3becaebe73a46b543bff0f06156d1.tres"]
+
+[params]
+
+defaults=true

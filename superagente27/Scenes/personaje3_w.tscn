@@ -1,0 +1,142 @@
+[gd_scene load_steps=19 format=3 uid="uid://d0lvhftejgmum"]
+
+[ext_resource type="Script" uid="uid://ca634pepf2pkd" path="res://Script/personajeDinamico.gd" id="1_3yky7"]
+[ext_resource type="Texture2D" uid="uid://db6wdkqu6xlio" path="res://assets/city/tilemap.png" id="2_evtrl"]
+[ext_resource type="Texture2D" uid="uid://bnet0ujmt0hxh" path="res://assets/character/75bea2bc-303d-4c8e-b0da-a5222cddb56b.png" id="3_ft1p3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brltg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4ki1"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(408, 255, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evtrl"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(408, 272, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ft1p3"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(408, 289, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amtd5"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(425, 255, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0rlt"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(425, 272, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yek5o"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(425, 289, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njaow"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(442, 255, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veweu"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(442, 272, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ccf"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(442, 289, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nulsa"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(391, 255, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg7v3"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(391, 272, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6wi6"]
+atlas = ExtResource("2_evtrl")
+region = Rect2(391, 289, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5rgyc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4ki1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evtrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ft1p3")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amtd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0rlt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yek5o")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njaow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veweu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5ccf")
+}],
+"loop": true,
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nulsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg7v3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6wi6")
+}],
+"loop": true,
+"name": &"Izquierda",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78hx4"]
+size = Vector2(15, 15)
+
+[node name="Personaje_women" type="Area2D"]
+z_index = 2
+collision_mask = 7
+script = ExtResource("1_3yky7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_brltg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5rgyc")
+animation = &"Abajo"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_78hx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -9)
+texture = ExtResource("3_ft1p3")

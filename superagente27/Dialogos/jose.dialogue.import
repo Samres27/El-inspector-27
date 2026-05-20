@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://c5tnfmkgc5l0t"
+path="res://.godot/imported/jose.dialogue-800c0f9c55902bd60a64aa7ad1471b6a.tres"
+
+[deps]
+
+source_file="res://Dialogos/jose.dialogue"
+dest_files=["res://.godot/imported/jose.dialogue-800c0f9c55902bd60a64aa7ad1471b6a.tres"]
+
+[params]
+
+defaults=true

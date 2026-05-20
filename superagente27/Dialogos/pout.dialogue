@@ -1,0 +1,39 @@
+~ start
+Pout: Que pesadilla
+Pout: Esta sola semana 4 salida y entre semana
+Pout: Quien rayos hace fiestas entre semanas
+Pout: Yo preferio estar en casa leyendo un libro
+Pout: Q-Que es lo ultimo que lei?
+Pout: Pues...
+% => line_a
+% => line_b
+
+~ line_a
+Pout: Cien años de soledad
+Pout: ¿De que habla la novela...?
+Pout: La novela narra la historia de siete generaciones de la familia Buendía en el pueblo de Macondo.
+Pout: Fundado por José Arcadio Buendía y Úrsula Iguarán, el pueblo prospera y se abre al mundo moderno.
+Pout: Sin embargo, el linaje está condenado por sus propios errores, el incesto y la incapacidad de amar.
+Pout: La guerra civil marca al coronel Aureliano Buendía, quien sobrevive a múltiples atentados, perdiendo el propósito de su vida.
+Pout: A lo largo de cien años, los descendientes repiten los mismos trágicos destinos, obsesiones y la profunda soledad que los caracteriza.
+Pout: El ciclo concluye cuando Aureliano Babilonia logra descifrar los manuscritos proféticos del gitano Melquíades.
+Pout: Justo al terminar de leerlos, un viento apocalíptico destruye Macondo, cumpliendo el destino final de una estirpe sin segundas oportunidades.
+Pout:  [[ Gracias por escucharme: Ten un buen dia| Siempre ten la guarda arriba| Nunca metas la pata| No te vayas por las ramas | No te comas el coco | Es hora de sacar los trapos sucios | _g0d0t_ | Puede ser un mejor dia?]]
+=> END
+~ line_b
+Pout: Harry Potter
+Pout: ¿De que trata?
+Pout: Harry Potter, un niño huérfano de diez años, vive con sus tíos. 
+Pout: Ha heredado los poderes mágicos de sus padres, aunque no lo sabe, y cuando cumple once años le invitan a ir a estudiar a un colegio de magia y hechicería. 
+Pout: Sus padres no habían muerto en un accidente de tráfico, como le habían hecho creer, sino en un enfrentamiento con el malvado Voldermort. 
+Pout: Harry, que entonces era bebé, sobrevivió, con una cicatriz en la frente. 
+Pout: Por ser la única persona que había sobrevivido a un ataque de Voldemort es famoso entre los magos. 
+Pout: Los tíos no quieren que vaya a ese colegio, pero al final tienen que aceptar. 
+Pout: Harry toma un tren, y en el colegio se hace muy amigo de dos compañeros de clase, un chico (Ron) y una chica (Hermione). 
+Pout: Descubren que hay un objeto precioso escondido en el colegio, la piedra filosofal, que permite convertir cualquier metal en oro, y producir el elixir de la vida eterna.
+Pout: .........
+Pout: .........
+Pout: .........
+Pout: Te estoy aburriendo
+Pout: [[ Al menos invite algo para matar el gusanillo| Mejora agamos que esto no haya pasado y tengamos un borron y cuenta nueva| person soy muy habladora hasta hablo por los codos | Puede que paresa que me falte dos veranos no?]]
+=> END

@@ -12,24 +12,22 @@ var is_active_dialoge = false
 
 
 func _physics_process(delta):
-
-	direccion = Input.get_vector(
-		"izquierda",
-		"derecha",
-		"arriba",
-		"abajo"
-	)
-	var current_speed = speed_run if Input.is_action_pressed("correr") else speed
-	
-	if Input.is_action_pressed("correr"):
-		$AnimatedSprite2D.speed_scale = 2.0
-	else:
-		$AnimatedSprite2D.speed_scale = 1.0
-	velocity = direccion * current_speed
-
-	move_and_slide()
-
-	actualizar_animacion()
+	if not GlobalDialogue.is_dialogue_active:
+		direccion = Input.get_vector(
+			"izquierda",
+			"derecha",
+			"arriba",
+			"abajo"
+		)
+		var current_speed = speed_run if Input.is_action_pressed("correr") else speed
+		
+		if Input.is_action_pressed("correr"):
+			$AnimatedSprite2D.speed_scale = 2.0
+		else:
+			$AnimatedSprite2D.speed_scale = 1.0
+		velocity = direccion * current_speed
+		move_and_slide()
+		actualizar_animacion()
 
 
 func actualizar_animacion():
@@ -52,8 +50,6 @@ func actualizar_animacion():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	is_player_close = true
 	
-
-
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	is_player_close = false
 

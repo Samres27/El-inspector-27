@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bgnvch1s1x76l"
+path="res://.godot/imported/ana.dialogue-9ebc34b4e79060d99c281bfe104cf565.tres"
+
+[deps]
+
+source_file="res://Dialogos/ana.dialogue"
+dest_files=["res://.godot/imported/ana.dialogue-9ebc34b4e79060d99c281bfe104cf565.tres"]
+
+[params]
+
+defaults=true

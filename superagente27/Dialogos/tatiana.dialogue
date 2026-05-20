@@ -1,0 +1,45 @@
+~ start
+
+% => dial0
+% => dial1
+% => dial2
+% => dial3
+% => dial4
+
+~ dial0
+Tatiana: Osea... ¿me estás hablando porque buscas algo o qué?
+Tatiana: We, literalmente no entiendo por qué me buscas a mí.
+Tatiana: Tipo... hay demasiada gente en esta ciudad.
+Tatiana: Aunque bueno...
+Tatiana: Supongo que sí tengo cara de importante.
+
+=> END
+
+~ dial1
+Tatiana: A ver...
+Tatiana: ¿Por qué todo el mundo termina hablándome a mí?
+Tatiana: No es que me moleste.
+Tatiana: Solo digo que claramente doy vibras de protagonista.
+=> END!
+
+~ dial2
+Tatiana: Osea hola.
+Tatiana: ¿Qué necesitas?
+Tatiana: Porque siento que vienes con cara de querer preguntar algo.
+Tatiana: Y we... honestamente me pone nerviosa cuando la gente hace eso.
+Tatiana: Tipo, solo dilo rápido.
+=> END
+~ dial3
+Tatiana: We, ayer intenté cocinar.
+Tatiana: Casi incendio la cocina.
+Tatiana: Pero tipo...
+Tatiana: La pasta sí quedó linda.
+=> END
+~ dial4
+Tatiana: Osea hola.
+Tatiana: Te juro que hoy iba a ser productiva.
+Tatiana: Incluso hice una lista.
+Tatiana: Pero luego me acosté cinco minutos.
+Tatiana: Y ahora ya es de noche.
+Tatiana: Honestamente el tiempo me odia.
+=> END

@@ -1,6 +1,7 @@
 extends Area2D
 
 var is_player_close = false
+
 @export var npc_dialogue: DialogueResource = preload("res://Dialogos/default.dialogue")
 @export var portrait: Texture2D
 var destino: Vector2
@@ -10,7 +11,7 @@ var existe_destino = false
 	
 func _process(delta: float):
 	actualizar_animacion()
-	if is_player_close and Input.is_action_just_pressed("ui_accept"):
+	if is_player_close and Input.is_action_just_pressed("ui_accept") and not GlobalDialogue.is_dialogue_active:
 		var balloon= DialogueManager.show_dialogue_balloon(npc_dialogue, "start")
 		
 		# 2. Si el Balloon se creó con éxito, le pasamos la textura directamente a su variable
@@ -20,17 +21,24 @@ func _process(delta: float):
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 	$Sprite2D.visible= false
 	generar_nuevo_destino() 
 	
-func _on_body_entered(body: Node2D):
+func _on_dialogue_started(dialogue):
+	GlobalDialogue.is_dialogue_active=true
 	
+func _on_dialogue_ended(dialogue):
+	await  get_tree().create_timer(0.4).timeout
+	GlobalDialogue.is_dialogue_active=false
+	
+func _on_body_entered(body: Node2D):
 	if body.name == "Player":
 		$Sprite2D.visible=true
 		is_player_close = true
 
 func _on_body_exited(body: Node2D):
-	
 	if body.name == "Player":
 		$Sprite2D.visible= false
 		is_player_close = false
@@ -51,21 +59,6 @@ func generar_nuevo_destino():
 	destino = global_position + Vector2(randf_range(-rango, rango), randf_range(-rango, rango))
 	existe_destino = true
 	
-#func movimiento():
-	#if existe_destino: #verificar que se tiene un destino
-		#direccion = (destino - global_position).normalized() #Direccion a tomar entre la posicion actual y el destino
-		#velocity = direccion * velocidad
-		#move_and_slide()
-		#
-		#if get_slide_collision_count() > 0:
-			#generar_nuevo_destino()
-		#
-		## Verifica si llegó al destino
-		#if global_position.distance_to(destino) < 5:
-			#velocity = Vector2.ZERO
-			#existe_destino = false
-			#await get_tree().create_timer(randf_range(0.5, 5)).timeout  # esperamos 1.5 segundos
-			#generar_nuevo_destino()
 func movimiento():
 	if existe_destino:
 		

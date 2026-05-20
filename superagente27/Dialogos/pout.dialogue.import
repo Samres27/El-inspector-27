@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://doow7beamyc5x"
+path="res://.godot/imported/pout.dialogue-55a4b91b458e9c739d324da5c7d6308a.tres"
+
+[deps]
+
+source_file="res://Dialogos/pout.dialogue"
+dest_files=["res://.godot/imported/pout.dialogue-55a4b91b458e9c739d324da5c7d6308a.tres"]
+
+[params]
+
+defaults=true
