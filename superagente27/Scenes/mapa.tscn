@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://c88lj4vfyy5kx"]
+
+[ext_resource type="PackedScene" uid="uid://bomdvlof7mht2" path="res://Scenes/node.tscn" id="1_kkfvo"]
+[ext_resource type="Texture2D" uid="uid://fxal21ujediw" path="res://assets/map/mapa1.png" id="2_ykhg3"]
+[ext_resource type="Texture2D" uid="uid://hbccr0fts0r8" path="res://assets/map/mapa2.png" id="3_v1efw"]
+[ext_resource type="Texture2D" uid="uid://x3skor4ofm2h" path="res://assets/map/mapa3.png" id="4_lkwsl"]
+[ext_resource type="Texture2D" uid="uid://gb2beg1kbqde" path="res://assets/map/mapa4.png" id="5_yq38d"]
+[ext_resource type="Texture2D" uid="uid://jqvaf3wsdcul" path="res://assets/map/mapa5.png" id="6_1lxf8"]
+
+[node name="mapa" type="Node2D"]
+z_index = 10
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0.0156863, 0.0156863, 0.0156863, 0.411765)
+
+[node name="Node" parent="." instance=ExtResource("1_kkfvo")]
+position = Vector2(883, 363)
+imagen_textura = ExtResource("2_ykhg3")
+
+[node name="Node2" parent="." instance=ExtResource("1_kkfvo")]
+position = Vector2(602, 534)
+imagen_textura = ExtResource("3_v1efw")
+
+[node name="Node3" parent="." instance=ExtResource("1_kkfvo")]
+position = Vector2(309, 376)
+imagen_textura = ExtResource("4_lkwsl")
+
+[node name="Node4" parent="." instance=ExtResource("1_kkfvo")]
+position = Vector2(417, 194)
+imagen_textura = ExtResource("5_yq38d")
+
+[node name="Node5" parent="." instance=ExtResource("1_kkfvo")]
+position = Vector2(750, 201)
+imagen_textura = ExtResource("6_1lxf8")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bomdvlof7mht2"]
+
+[ext_resource type="Script" uid="uid://dmcss7hih2nwr" path="res://Script/move.gd" id="1_j2q8x"]
+[ext_resource type="Texture2D" uid="uid://b6lq1a207bdpm" path="res://icon.svg" id="2_112p8"]
+
+[node name="Node" type="CharacterBody2D"]
+script = ExtResource("1_j2q8x")
+
+[node name="imagen" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_112p8")
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

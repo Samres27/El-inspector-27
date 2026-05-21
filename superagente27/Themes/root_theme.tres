@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cnbh3ucd52m50"]
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://cnbh3ucd52m50"]
 
+[ext_resource type="Texture2D" uid="uid://l8prb335bjfq" path="res://assets/UI/Small Square Buttons.png" id="1_5bq8y"]
 [ext_resource type="FontFile" uid="uid://clgtqpyqaybbm" path="res://assets/fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_ue1j3"]
 [ext_resource type="FontFile" uid="uid://dnrlcge7cofox" path="res://assets/fonts/Patrick_Hand_SC/PatrickHandSC-Regular.ttf" id="2_0pxgw"]
 
@@ -7,20 +8,76 @@
 bg_color = Color(0.782472, 0.633542, 0.430061, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pxgw"]
-bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+bg_color = Color(0.771419, 0.62247, 0.418607, 1)
 border_color = Color(0.780392, 0.631373, 0.431373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o04g6"]
+bg_color = Color(0.780392, 0.631373, 0.431373, 1)
+border_color = Color(0.709804, 0.560784, 0.364706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qct8m"]
+bg_color = Color(0.780392, 0.631373, 0.431373, 1)
+border_color = Color(0.780392, 0.631373, 0.431373, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5bq8y"]
 bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.780392, 0.631373, 0.431373, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
-shadow_color = Color(0.505344, 0.505344, 0.505344, 0.6)
+shadow_color = Color(0.780392, 0.631373, 0.431373, 1)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubono"]
+bg_color = Color(0.708398, 0.562694, 0.365284, 1)
+border_color = Color(0.709804, 0.560784, 0.364706, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl65l"]
+atlas = ExtResource("1_5bq8y")
+region = Rect2(16.9401, 65.8848, 14.1954, 14.0653)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7f0g"]
+bg_color = Color(0.74902, 0.6, 0.396078, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvcib"]
+bg_color = Color(0.74902, 0.6, 0.396078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4blh"]
+bg_color = Color(0.74902, 0.6, 0.396078, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_netea"]
+bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.74902, 0.6, 0.396078, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.74902, 0.6, 0.396078, 1)
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl65l"]
@@ -36,15 +93,24 @@ default_font = ExtResource("2_0pxgw")
 Button/icons/icon = null
 Button/styles/disabled = SubResource("StyleBoxFlat_ue1j3")
 Button/styles/hover = SubResource("StyleBoxFlat_0pxgw")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_o04g6")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qct8m")
 Button/styles/normal = SubResource("StyleBoxFlat_5bq8y")
+Button/styles/pressed = SubResource("StyleBoxFlat_ubono")
+HSlider/icons/grabber = SubResource("AtlasTexture_dl65l")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_dl65l")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_x7f0g")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_lvcib")
 Label/font_sizes/font_size = 30
-Label/fonts/font = ExtResource("1_ue1j3")
+Label/fonts/font = ExtResource("2_0pxgw")
 LineEdit/fonts/font = ExtResource("1_ue1j3")
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 MenuButton/fonts/font = ExtResource("1_ue1j3")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_e4blh")
+Panel/styles/panel = SubResource("StyleBoxFlat_netea")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_dl65l")
 RichTextLabel/constants/line_separation = 5
 RichTextLabel/font_sizes/bold_font_size = 20

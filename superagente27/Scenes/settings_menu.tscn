@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://em0q2wrsj0m0"]
+
+[ext_resource type="Script" uid="uid://dnsyiirflv4xq" path="res://script/settings_menu.gd" id="1_icv2g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_icv2g"]
+bg_color = Color(0.862745, 0.72549, 0.541176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.74902, 0.6, 0.396078, 1)
+shadow_size = 2
+
+[node name="SettingsMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icv2g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 227.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_icv2g")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -73.0
+offset_right = 68.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Volumen" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Volumen"
+
+[node name="HSlider" type="HSlider" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+
+[node name="Resolucion" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "resolucion"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Exit
+"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

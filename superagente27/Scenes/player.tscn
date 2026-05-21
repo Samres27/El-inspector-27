@@ -1,7 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://d38an2cy6cjf2"]
+[gd_scene load_steps=21 format=3 uid="uid://d38an2cy6cjf2"]
 
 [ext_resource type="Script" uid="uid://bewugfg1j3sk3" path="res://Script/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://db6wdkqu6xlio" path="res://assets/city/tilemap.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://dhcw06ntop2xs" path="res://assets/UI/house_64px.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://rmarxebdvsly" path="res://assets/UI/map_64px.png" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://lyyifnlk60w6" path="res://assets/UI/settings_64px.png" id="5_3smsa"]
+[ext_resource type="PackedScene" uid="uid://em0q2wrsj0m0" path="res://Scenes/settings_menu.tscn" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvnsp"]
 atlas = ExtResource("1_v0iea")
@@ -125,7 +129,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1dd"]
 size = Vector2(11, 14)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 script = ExtResource("1_cvnsp")
 
@@ -134,11 +138,56 @@ sprite_frames = SubResource("SpriteFrames_f60y1")
 animation = &"Izquierda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_tx1dd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 limit_left = 0
 limit_top = 0
 limit_right = 1740
 limit_bottom = 1125
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 140.0
+offset_bottom = 84.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Salir" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_fkybt")
+
+[node name="Mapa" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+icon = ExtResource("4_x3wgy")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Configuracion" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_3smsa")
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("6_x3wgy")]
+
+[node name="MapController" type="Node" parent="CanvasLayer"]
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/Mapa" to="." method="_on_mapa_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/Configuracion" to="." method="_on_configuracion_pressed"]

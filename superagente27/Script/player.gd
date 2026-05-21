@@ -6,13 +6,17 @@ var direccion: Vector2
 @export var speed := 50.0
 @export var speed_run := 100.0
 
+var mapa_instancia = null
+var mapa_escena = preload("res://Scenes/mapa.tscn")
+@onready var map_container = $CanvasLayer/MapController
 
 var is_player_close = false
 var is_active_dialoge = false
-
+var read_map=false
+var block_map=true
 
 func _physics_process(delta):
-	if not GlobalDialogue.is_dialogue_active:
+	if not GlobalDialogue.is_dialogue_active and not read_map:
 		direccion = Input.get_vector(
 			"izquierda",
 			"derecha",
@@ -29,6 +33,31 @@ func _physics_process(delta):
 		move_and_slide()
 		actualizar_animacion()
 
+func _input(event):
+
+	if event.is_action_pressed("map"):
+		if not block_map:
+			if mapa_instancia == null :
+				abrir_mapa()
+			else:
+				cerrar_mapa()
+			
+func _on_mapa_pressed():
+	if mapa_instancia == null:
+		abrir_mapa()
+	else:
+		cerrar_mapa()
+			
+func abrir_mapa():
+	mapa_instancia = mapa_escena.instantiate()
+	map_container.add_child(mapa_instancia)
+	read_map=true
+
+
+func cerrar_mapa():
+	mapa_instancia.queue_free()
+	mapa_instancia = null
+	read_map=false
 
 func actualizar_animacion():
 	if direccion == Vector2.ZERO:
@@ -59,3 +88,11 @@ func dialogo_activo (dialogo) :
 func dialogo_desactivo(dialogo):
 	await get_tree().create_timer(0.2).timeout
 	is_active_dialoge = false
+
+
+func _on_configuracion_pressed() -> void:
+	$CanvasLayer/SettingsMenu.visible=true
+
+
+func _on_salir_pressed() -> void:
+	self.queue_free()
