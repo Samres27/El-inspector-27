@@ -16,7 +16,7 @@ var read_map=false
 var block_map=true
 
 func _physics_process(delta):
-	if not GlobalDialogue.is_dialogue_active and not read_map:
+	if not GlobalDialogue.is_dialogue_active and not read_map and not GlobalDialogue.line_edit_active:
 		direccion = Input.get_vector(
 			"izquierda",
 			"derecha",

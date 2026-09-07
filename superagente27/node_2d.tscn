@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://bmcuasj4w7hx"]
+[gd_scene load_steps=108 format=4 uid="uid://bmcuasj4w7hx"]
 
 [ext_resource type="Script" uid="uid://dfak1ehew2ru" path="res://Script/main.gd" id="1_2v765"]
 [ext_resource type="Texture2D" uid="uid://db6wdkqu6xlio" path="res://assets/city/tilemap.png" id="1_wtcfe"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://byr1pdma1prav" path="res://Scenes/paso_de_cebras.tscn" id="7_rj586"]
 [ext_resource type="Resource" uid="uid://bgnvch1s1x76l" path="res://Dialogos/ana.dialogue" id="8_4qosj"]
 [ext_resource type="Texture2D" uid="uid://dpg52r8tn6h5g" path="res://assets/character/ana.png" id="8_24dk6"]
+[ext_resource type="Resource" uid="uid://b4lmxqiwyo52n" path="res://Dialogos/chest.dialogue" id="8_b8fb0"]
 [ext_resource type="PackedScene" uid="uid://d0lvhftejgmum" path="res://Scenes/personaje3_w.tscn" id="8_nr8wp"]
 [ext_resource type="PackedScene" uid="uid://d3n4eiphmwjt2" path="res://Scenes/personaje1_w.tscn" id="8_rj586"]
 [ext_resource type="Texture2D" uid="uid://kc781xt5axdg" path="res://assets/character/cecilia.png" id="9_hqns4"]
@@ -51,8 +52,9 @@
 [ext_resource type="Resource" uid="uid://o4jwmyn3lyp5" path="res://Dialogos/roberto.dialogue" id="45_t3mf0"]
 [ext_resource type="Resource" uid="uid://dmhxrkjvy7i82" path="res://Dialogos/samuel.dialogue" id="47_kejda"]
 [ext_resource type="Resource" uid="uid://bdimfjuhixr57" path="res://Dialogos/tatiana.dialogue" id="49_uqk8q"]
+[ext_resource type="PackedScene" uid="uid://d3mpqg8cpn4g3" path="res://Scenes/chest.tscn" id="52_2v765"]
 [ext_resource type="PackedScene" uid="uid://em0q2wrsj0m0" path="res://Scenes/settings_menu.tscn" id="52_kfelt"]
-[ext_resource type="Script" uid="uid://kryxbn3vyjdg" path="res://script/control.gd" id="52_ytlpd"]
+[ext_resource type="Script" uid="uid://kryxbn3vyjdg" path="res://Script/control.gd" id="52_ytlpd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_wtcfe"]
 tile_data = PackedInt32Array(0, 1179665, 8, 65536, 1179665, 9, 131072, 1179665, 10, 1, 1245201, 8, 65537, 1245201, 9, 131073, 1245201, 10, 2, 1310737, 8, 65538, 1310737, 9, 131074, 1310737, 10)
@@ -3892,6 +3894,13 @@ _data = {
 }
 point_count = 12
 
+[sub_resource type="Theme" id="Theme_b8fb0"]
+Button/font_sizes/font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_ma08v"]
+font_size = 30
+outline_size = 1
+
 [node name="Node2D" type="Node2D"]
 z_index = 1
 script = ExtResource("1_2v765")
@@ -4459,6 +4468,10 @@ position = Vector2(1393, 210)
 rotation = 1.5708
 scale = Vector2(0.8, 0.8)
 
+[node name="chest" parent="." instance=ExtResource("52_2v765")]
+position = Vector2(503, 301)
+npc_dialogue = ExtResource("8_b8fb0")
+
 [node name="Npcs" type="Node" parent="."]
 
 [node name="Personaje_women" parent="Npcs" instance=ExtResource("8_rj586")]
@@ -4567,10 +4580,10 @@ script = ExtResource("52_ytlpd")
 
 [node name="Creditos" type="Panel" parent="Control"]
 visible = false
-offset_left = 294.0
-offset_top = -1.0
-offset_right = 563.0
-offset_bottom = 327.0
+offset_left = 390.0
+offset_top = 14.0
+offset_right = 683.0
+offset_bottom = 408.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Creditos"]
 custom_minimum_size = Vector2(200, 0)
@@ -4597,10 +4610,15 @@ text = "Recusos utilizados:"
 
 [node name="Label2" type="Label" parent="Control/Creditos/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "570 + icons by nieobie
-RPG Urban Pack by kenny
-Sprout Lands by Cup Nooble "
+theme_override_font_sizes/font_size = 18
+text = "570 + icons 
+             by nieobie
+RPG Urban Pack 
+             by kenny
+Sprout Lands
+             by cup Nooble 
+FREE MUSIC PACK
+              by clementpanchout"
 
 [node name="Salir" type="Button" parent="Control/Creditos/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -4609,8 +4627,8 @@ text = "salir
 
 [node name="main menu" type="Panel" parent="Control"]
 offset_top = 1.0
-offset_right = 269.0
-offset_bottom = 329.0
+offset_right = 311.0
+offset_bottom = 410.0
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/main menu"]
 custom_minimum_size = Vector2(200, 0)
@@ -4629,7 +4647,14 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/main menu/MarginContainer"]
 layout_mode = 2
+theme = SubResource("Theme_b8fb0")
 theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Control/main menu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inspector 27"
+label_settings = SubResource("LabelSettings_ma08v")
+uppercase = true
 
 [node name="Iniciar" type="Button" parent="Control/main menu/MarginContainer/VBoxContainer"]
 layout_mode = 2

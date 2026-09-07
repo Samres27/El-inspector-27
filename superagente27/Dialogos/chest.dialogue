@@ -1,0 +1,24 @@
+~ Inicio
+
+System: Oh, encuentras oculto un cofre.
+
+System: Intentas abrirlo, pero te pide que introduzcas una contraseña.
+
+=> END
+
+~ Correcto
+
+System: Perfecto, la contraseña está bien.
+
+=> END
+
+~ Erroneo
+
+System: Contraseña errónea
+
+=> END
+~ Sin_Contrasena
+
+System: Ingrese una contraseña valida 
+
+=> END

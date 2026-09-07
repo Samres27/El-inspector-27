@@ -5,7 +5,7 @@
 ## A RichTextLabel specifically for use with [b]Dialogue Manager[/b] dialogue.
 class_name DialogueLabel extends RichTextLabel
 
-
+var last_visible := 0
 ## Emitted for each letter typed out.
 signal spoke(letter: String, letter_index: int, speed: float)
 
@@ -86,7 +86,7 @@ func _process(delta: float) -> void:
 			# Make sure any mutations at the end of the line get run
 			_mutate_inline_mutations(get_total_character_count())
 			is_typing = false
-
+		
 
 ## Sets the label's text from the current dialogue line. Override if you want
 ## to do something more interesting in your subclass.

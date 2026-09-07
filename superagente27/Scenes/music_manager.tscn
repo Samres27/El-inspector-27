@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://oqswe1sonb5b"]
+
+[ext_resource type="Script" uid="uid://ditmr2lf112r1" path="res://Script/music_manager.gd" id="1_hsxb6"]
+[ext_resource type="AudioStream" uid="uid://nd25rq6xa3fl" path="res://assets/music/Clement_Panchout_Gothic Picture_ 2002.wav" id="2_sdmu8"]
+
+[node name="MusicManager" type="Node"]
+script = ExtResource("1_hsxb6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sdmu8")
+volume_db = -20.0

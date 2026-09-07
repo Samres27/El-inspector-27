@@ -1,10 +1,8 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
-
-
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
-
+@onready var bip_player: AudioStreamPlayer = $BipPlayer
 ## Start from a given title when using balloon as a [Node] in a scene.
 @export var start_from_title: String = ""
 
@@ -75,7 +73,12 @@ var mutation_cooldown: Timer = Timer.new()
 func _ready() -> void:
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
-
+	%DialogueLabel.spoke.connect(func(letter, _index, _speed):
+		print("letra: ", letter) 
+		if letter != " ":
+			bip_player.stop()   # detiene el anterior inmediatamente
+			bip_player.play()   # y empieza de nuevo
+)
 	# If the responses menu doesn't have a next action set, use this one
 	if responses_menu.next_action.is_empty():
 		responses_menu.next_action = next_action
@@ -93,7 +96,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_instance_valid(dialogue_line):
 		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
-
 
 func _unhandled_input(_event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
@@ -224,6 +226,10 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)
+	
+func _on_char_displayed():
+	if bip_player and not bip_player.playing:
+		bip_player.play()
 
 
 #endregion

@@ -90,6 +90,7 @@ corner_radius_bottom_left = 20
 
 [resource]
 default_font = ExtResource("2_0pxgw")
+Button/font_sizes/font_size = 18
 Button/icons/icon = null
 Button/styles/disabled = SubResource("StyleBoxFlat_ue1j3")
 Button/styles/hover = SubResource("StyleBoxFlat_0pxgw")
@@ -103,7 +104,8 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_x7f0g")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_lvcib")
 Label/font_sizes/font_size = 30
 Label/fonts/font = ExtResource("2_0pxgw")
-LineEdit/fonts/font = ExtResource("1_ue1j3")
+LineEdit/font_sizes/font_size = 40
+LineEdit/fonts/font = ExtResource("2_0pxgw")
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
